@@ -1,0 +1,104 @@
+{% extends "./layout.html" %}
+
+{%  block titulo %}
+ Registro
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{%  block estilos %}
+<style>
+    .btn {
+        padding: 10px 20px;
+        background-color: #007bff; /* Color de fondo predeterminado */
+        color: #fff; /* Color de texto predeterminado */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Transición de color de fondo */
+    }
+
+    /* Estilos para cambiar el color de fondo al pasar el cursor */
+    .btn:hover {
+        background-color: #fff; /* Cambiar a blanco cuando se pasa el cursor */
+        color: #007bff; /* Cambiar el color de texto a azul */
+    }
+    .formulario-borde{
+        
+        
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+       
+        
+    }
+    .formulario {
+        width: 100%;
+        max-width: 400px; /* Ajusta este valor según tus necesidades */
+        border: 1px solid white;
+        padding: 20px;
+    }
+    .btn-autenticarse {
+        padding: 10px 20px;
+        background-color: #000; /* Color de fondo gris */
+        color: #fff; /* Color de texto blanco */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Transición de color de fondo */
+    }
+
+    /* Estilos para cambiar el color de fondo al pasar el cursor */
+    .btn-autenticarse:hover {
+        background-color: #fff; /* Cambiar a blanco cuando se pasa el cursor */
+        color: dimgrey; /* Cambiar el color de texto a gris */
+        
+    }
+    .btn-autenticarse{
+        text-decoration: none;
+    }
+    body{
+        background-image: url("{{ url_for('static', filename='imagenes/horticultura.png') }}");
+        object-fit: initial;
+    
+    }
+   
+</style>
+{% endblock %}
+
+{%  block contenido %}
+
+<section class="formulario-borde">
+    <div class="container">
+        <form class="formulario mx-auto">
+            <h2 class="fw-bold text-white">Login to your account</h2>
+            <div class="mb-3 py-3">
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary w-100 mb-2 form-control-lg fw-bold">Acceder</button>
+                <div class="text-end ">
+                    <a href="olvido contraeña" class="text-success">Forgot Password</a>
+                </div>
+            </div>
+            <hr class="w-100 mb-4 text-white" >
+            <div class="text-center">
+                <p class="text-white">Ingresa con tu correo institucional</p>
+                <a href="#acceder a correo" class="btn-autenticarse btn btn-primary w-100 form-control-lg fw-medium">Sign up with Outlook</a>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

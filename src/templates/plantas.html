@@ -1,0 +1,1563 @@
+{% extends "./layout.html" %}
+
+{% block titulo %}
+Plantas
+{% endblock %}
+{% block estilos %}
+<style>
+  .sketchfab-embed-wrapper iframe {
+    width: 100%;
+    height: 500px;
+  }
+
+  /* Estilos adicionales */
+
+
+  .modal {
+    background-image: url("{{ url_for('static', filename='imagenes/ancianato.jpg') }}");
+    background-size: cover;
+  }
+
+  .album1 {
+    background-color: forestgreen;
+  }
+
+  .modal-title {
+    color: forestgreen;
+
+  }
+
+  .plantatext {
+    color: black;
+  }
+
+  .card:hover img {
+    transform: scale(1.2);
+    /* Aumenta la escala al 110% */
+    transition: transform 0.3s ease;
+    /* Agrega una transición suave */
+  }
+
+  /* Estilo para la imagen agrandada */
+  .enlarge {
+    width: 80%;
+    /* Ancho de la imagen agrandada */
+    height: auto;
+    /* Para mantener la proporción de la imagen */
+    position: fixed;
+    /* Posición fija */
+    z-index: 9999;
+    /* Asegúrate de que esté por encima de otros elementos */
+  }
+</style>
+
+{% endblock %}
+{% block contenido %}
+
+<!-- seccion de figura 3d -->
+<section>
+  <div class="card mb-3">
+    <div class="sketchfab-embed-wrapper">
+      <iframe title="Birch Forest" src="https://sketchfab.com/models/f46fb5815325462f9f2a6a9b88374c65/embed"
+        frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+        execution-while-not-rendered web-share></iframe>
+    </div>
+  </div>
+  
+</section>
+
+<!-- Creacion de las plantas  -->
+
+<!-- Creacion del album hortalizas -->
+
+<section class="py-3 text-center container  ">
+  <div class="row ">
+    <div class="col-form-label-lg">
+      <h1 class="modal-title fw-semibold py-3">ALBÚM DE PLANTAS</h1>
+      <p class="lead text-body-emphasis text-start">Sumérgete en la frescura y el colorido mundo de las hortalizas a
+        través de este cautivador álbum de fotos. Desde los vibrantes tomates rojos hasta las exuberantes hojas verdes
+        de la lechuga, cada imagen captura la belleza y la vitalidad de la naturaleza. Observa de cerca la textura
+        rugosa de los pepinos, la delicadeza de las zanahorias recién cosechadas y el brillo brillante de los pimientos.
+        Cada fotografía cuenta una historia de crecimiento y nutrición, invitándote a apreciar la diversidad y el poder
+        de las hortalizas en nuestra vida diaria. Déjate inspirar por estas imágenes y descubre el deleite visual y
+        culinario que ofrecen las maravillas de la naturaleza.</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- seccion uno de plantas  -->
+<section>
+  <div class="album1 py-5  mb-4">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="  card shadow-sm">
+            <!-- Dentro del bucle de tus imágenes -->
+            <img src="{{ url_for('static', filename='imagenes/acelga.png') }}" class="bd-placeholder-img card-img-top "
+              width="100%" height="225">
+
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <button type="button " class="btn btn-sm  btn-dark btn-view " data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1">Ver descripción</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="  card shadow-sm">
+            <img src="{{ url_for('static', filename='imagenes/ajenjo.png') }}" class="bd-placeholder-img card-img-top "
+              width="100%" height="225">
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2">Ver descripción</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ url_for('static', filename='imagenes/aji.png') }}" class="bd-placeholder-img card-img-top "
+              width="100%" height="225">
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal3">Ver descripción</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repite para otras imágenes -->
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- seccion uno de modal -->
+<section>
+  <!-- Modal 1 -->
+  <div class=" modal fade  modal-lg container-fluid " id="exampleModal1" tabindex="-1"
+    aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content ">
+        <div class="modal-header bg-body-secondary ">
+          <h3 class="plantatext modal-title fw-bold " id="exampleModalLabel1">ACELGA</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+          <p class="lead text-body-emphasis">Es originaria de las costas europeas</p>
+
+
+          <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+          <p class="lead text-body-emphasis text-end">Es originaria de las costas europeas</p>
+
+          <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+          <p class="lead text-body-emphasis">Se puede comer, es nutritiva</p>
+
+          <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+          <p class="lead text-body-emphasis text-end">No tienen</p>
+
+          <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+          <p class="lead text-body-emphasis ">Las acelgas requieren de abundante agua para que la tierra esté siempre
+            húmeda, aunque evitando los encharcamientos.</p>
+
+          <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+          <p class="lead text-body-emphasis text-end">El riego, por tanto, deberá ser regular, más aún en verano, época
+            en la que será
+            necesario regar cada dos días.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Modal 2 -->
+  <div class="modal fade container-fluid modal-lg" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-body-secondary ">
+          <h3 class="plantatext modal-title fw-bold " id="exampleModalLabel1">AJENJO</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+          <p class="lead text-body-emphasis">Artemisia absinthium</p>
+
+
+          <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+          <p class="lead text-body-emphasis text-end">Es originaria de Europa occidental y del norte de África</p>
+
+          <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+          <p class="lead text-body-emphasis">Planta medicinal y aromática. Sirve como remedio ecológico contra plagas
+          </p>
+
+          <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+          <p class="lead text-body-emphasis text-end">Flores de color amarillo</p>
+
+          <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+          <p class="lead text-body-emphasis ">Prefiere ambientes secos y con buen drenaje. Es muy resistente a la
+            sequía.
+            Prefiere ser expuesta al sol, aunque también tolera semisombra</p>
+
+          <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+          <p class="lead text-body-emphasis text-end"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade container-fluid modal-lg" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-body-secondary">
+          <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel3">AJÍ</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+          <p class="text-dark fw-bold">Capsicumfrutescens</p>
+          <p class="lead text-body-emphasis ">
+            Familia: Solanáceas</p>
+
+
+          <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+          <p class="lead text-body-emphasis text-end">Planta de origen americano</p>
+
+          <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+          <p class="lead text-body-emphasis">Sus tallos pueden medir hasta 80 cm de altura, de hojas simples, ovaladas y
+            de
+            color verde brillante. El fruto de color rojo en la madurez, es delgado, curvo y un
+            poco arrugado</p>
+
+          <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+          <p class="lead text-body-emphasis text-end">Flores blancas
+          </p>
+
+          <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+          <p class="lead text-body-emphasis ">Prospera en climas cálidos y templados. Requiere suelos profundos,
+            fértiles de
+            textura franco-arcillosa y bien drenados. La exposición al sol es muy importante
+            al menos 8 horas diarias. Se siembra en semillero y la germinación es en 8 días,
+            se trasplanta cuando la planta alcance 10 cm.
+          </p>
+
+          <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+          <p class="lead text-body-emphasis text-end">Se recomienda incorporar al terreno abono orgánico y fertilizante
+            rico en potasio.
+            Tiene un periodo vegetativo aproximado de 90 días después del trasplante.
+            Distancia de cultivo recomendada en suelo entre planta y planta es entre 40 y 50
+            cm.Se adapta a climas cálidos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- creacion segunda fila -->
+
+<div class="album py-5 bg-body-tertiary  mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/albaca.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal4">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/arnica.png') }}" class="bd-placeholder-img card-img-top"
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal5">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/azucena.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal6">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel4">ALBAHACA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class=" text-dark fw-bold ">Ocimum Basilicum</p>
+        <p class="lead text-body-emphasis">Es originaria de las costas europeas</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Planta de origen presumiblemente asiático</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Sus tallos rectos, múltiples y ramificados alcanzan hasta 60 cm de altura,
+          con
+          hojas pecioladas, ovaladas y dentadas de color verde brillante.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores de color blanco y morado</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Prospera en climas cálidos y templados, requiere suelos ricos en materia
+          orgánica de textura franco. Arcillosa, permeables y con buen drenaje. Es
+          necesario realizar un semillero, manteniéndolo a la sombra y con una
+          humedad constante hasta la germinación que es de 10 a 15 días. . El periodo
+          vegetativo entre 80 a 90 días, la distancia de cultivo debe ser de 25 cm entre
+          planta y planta Se adapta a sol directo o a semisombra. Requiere riego
+          regular, pero no en exceso.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Para usar las hojas frescas se pueden cosechar en cualquier momento
+          después
+          de la maduración. Tiene múltiples virtudes es aromática, culinaria, digestivas,
+          calmantes e insecticida. Tiene propiedad insecticida pues sirve para ahuyentar
+          los insectos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel5"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel5">ÁRNICA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Salvia rosmarinus </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Originaria de México </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Usos ornamentales y medicinales para tratar dolores musculares e
+          inflamaciones.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores amarillas y naranjas</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Le gusta el sol directo. Regar todas las semanas</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Necesita un lugar ideal donde reciba muchas horas de luz al día pues
+          se trata de
+          una planta de sol.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel6">AZUCENA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Lilium candidum</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Es una planta originaria de Siria y Palestina</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Tiene llamativos colores e increíble aroma que dan vida a cualquier espacio
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Tienen flores coloridas y duraderas. Hay azucenas o lirios blancos,
+          naranjas, morados,
+          rosas y amarillos.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Al ser una planta bulbosa, la azucena se debe sembrar al menos con 15 cm de
+          profundidad, ya sea en tierra o maceta. Además, se deben dejar de 10 a 15
+          centímetros se separación entre cada bulbo, para que sus raíces puedan
+          extenderse sin problema.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">El bulbo recién plantado necesita humedad constante para brotar. Por
+          ello, las
+          azucenas necesitan ser regadas 2 o 3 veces por semana, dependiendo del clima,
+          para mantener el suelo húmedo, pero sin encharcar. No necesitan poda. Sin
+          embargo, es recomendable retirar las flores marchitas y hojas secas o enfermas,
+          para evitar que el tallo se afecte y esta pueda seguir floreciendo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin del album hortalizas -->
+
+
+<div class="album1 py-5  mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/corona.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal7">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/dalia.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal8">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/gerario.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal9">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel7"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel7">CORONA DE CRISTO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Euphorbia milii </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Arbusto originario de Madagascar</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Es duradera, no requiere mucho cuidado y tiene flores lindas.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">flores de colores brillantes: rosa, rojo y amarillo.
+        </p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Necesitan recibir suficiente sol. Debes colocarla a los rayos del sol por al
+          menos
+          tres horas diarias. Y si la tienes adentro, mantenla cerca de una ventana o de
+          cualquier lugar donde reciba luz directa. Se da muy bien tanto al exterior como al
+          interior, solo es cuestión de prestar mucha atención a la luz que recibe..</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Solo debes regarla cuando la tierra de hasta arriba esté seca.
+          También asegúrate
+          de que las raíces no estén ahogadas o demasiado húmedas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 8 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel8"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel8">DALIA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class=" text-dark fw-bold">Dahlia</p>
+        <p class="lead text-body-emphasis">Familia: Variabilis</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Planta de origen americano, su país de origen es México</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Planta rústica que aporta colorido.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Hermosa flor doble sin disco central, de talla mediana, amplios
+          pétalos redondeados
+          en las puntas y ligeramente curvados.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Se recomienda sembrar en zonas de mucha luz, pero apartada de corrientes de
+          aire por ser de talla mediana y sin que el sol la afecte de forma directa. Sembrar
+          ensuelo abonado, suelto y bien drenado y regarla abundantemente. Se puede
+          sembrar en materas, jardineras o en suelo directo y en este caso la distancia de
+          cultivo debe ser a 35 cm entre una planta y otra.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Germina entre los 10 a 12 días, tiene un periodo vegetativo de 60 a
+          70 días aunque las
+          plantas anuales son las que cumplen un ciclo vegetativo de 1 año aproximadamente.
+          Se recomiendan resiembras escalonadas.
+          Se adapta a climas cálidos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 9 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel9"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel9">EL GERANIO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Geranium spp (Geraniaceae) </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Algunas especies de zonas templadas y otras de ambientes
+          tropicales</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Los geranios son vistosos por sus flores coloridas y crean ambientes de
+          alegría
+          y tranquilidad</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">De acuerdo con la especie presentan variedad, pueden ser rojos,
+          rosados,
+          blancos, púrpuras</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Debe situarsee en un lugar donde obtenga luz solar directa, pero debe
+          protegerse
+          durante los horas de mas fuerte el calor, por esto se recomiendan lugares de
+          semisombra.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Tiene propiedades medicinales, las cuales provienen de sus hojas, en
+          algunos
+          lugares la infusión de estas es usada para dolores lumbares, menstruales,
+          sudoración excesiva y congestión.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- creacion segunda fila -->
+
+<div class="album py-5 bg-body-tertiary mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/girasol.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal10">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/hierbabuena.png') }}"
+            class="bd-placeholder-img card-img-top " width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal11">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/lechuga.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal12">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 10 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel10"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel10">GIRASOL</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">HelianthusAnnus</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Es originaria del norte de México y oeste de E.U.A.
+        </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Planta rústica que aporta colorido.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores Amarillas</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Las siembras se pueden hacer en cualquier tipo de suelo aunque prefiere los
+          ricos
+          en materia orgánica y el sitio de siembra debe estar a pleno sol pero en climas
+          cálidos evitar la siembra en lugares que reciban demasiado sol.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Después de la siembra y cuando las plantas tengan aproximadamente 15
+          cm se
+          recomienda entresacar, dejando solo las más vigorosas. La distancia de cultivo es
+          de 35 cm, la germinación se da entre 14 a 21 días y el periodo vegetativo es de 80
+          días. Se recomienda resiembras escalonadas.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 11 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal11" tabindex="-1" aria-labelledby="exampleModalLabel11"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel11">HIERBABUENA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">Mentha Spinata</p>
+        <p class="lead text-body-emphasis">Familia:Lamiaceae</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Originaria de Europa, Africa, Asia
+        </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Su sabor es fresco y refrescante, así como un aroma agradable.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores de color morado en inflorescencias en forma de espiga.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Es una planta de larga duración con brillantes hojas lanceoladas,
+          irregularmente dentadas, sin pelos. Sembrarla en tierra abonada, suelta y
+          bien drenada, regarla abundantemente. Se puede cultivar directamente en el
+          suelo o en materas.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Ideal para agregar al té, ensaladas de frutas, salsa de tomate
+          fresca, salsa de
+          menta, cocteles y platos orientales. Siempre se debe usar fresca y aplicar en el
+          último momento. Es bastante digestivo y estimulante estomacal,
+          medicinalmente se usa para el asma, dolores de cabeza y estómago. Utilizado
+          para aromatizar dependencias del hogar y su aceite esencial forma parte de
+          numerosos perfumes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 12 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal12" tabindex="-1" aria-labelledby="exampleModalLabel12"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel12">LECHUGA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">Lactusa Sativa</p>
+        <p class="lead text-body-emphasis">Familia: compuestas </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">No está bien definido, algunos sostienen que es un cultivo
+          procedente de la India y
+          otros, como Vavilov, apuntan como origen el Oriente Próximo</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Es una hortaliza que se adapta a diversos climas y a todo tipo de suelo.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Se formaran varias flores compuestas formando una inflorescencia con
+          apariencia de
+          una sola flor. La fase de fructificación también se conoce con el nombre de espigado.
+        </p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Se adapta a climas muy diversos y aunque se adapta a todo tipo de suelo,
+          prefiere las texturas arcillosas y franco arenosas que retengan la humedad y
+          sean bien drenadas. Requiere de nitrógeno y potasio. Tiene un periodo vegetativo
+          de 90 días. Se siembra a medio cm de profundidad en semillero, germina a los 4
+          días y se trasplanta a los 30 días cuando tengan al menos 8 cm de altura,
+          trasplantar en días nublados, es recomendable cosechar temprano en la
+          mañana.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Hortaliza de cabeza compacta, redonda de color verde oscuro, tamaño
+          mediano y
+          hojas crespas sueltas. Contiene Vitamina C, K, acido fólico, hierro, potasio, calcio y
+          fósforo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin  del almbun de frutas  -->
+
+<!-- Creacion del almbun de aromaticas y hierbas -->
+
+
+
+
+<div class="album1 py-5  mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/limonaria.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal13">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/llanten.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-dark btn-sm btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal14">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/manzanilla.png') }}"
+            class="bd-placeholder-img card-img-top " width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal15">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 13 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal13" tabindex="-1" aria-labelledby="exampleModalLabel13"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel13">LIMONARIA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Cymbopogon citratus</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Probablemente originaria de India o Sri Lanka</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Planta aromática que tiene uso medicinal.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">No tienen</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Mantener suelo húmedo, pero sin acumulación de agua. Regar 1 o 2 veces por
+          semana. Fertilización una vez cada 2-3 meses durante la temporada de
+          crecimiento. Recorte las hojas enfermas y marchitas. Necesita un excelente
+          drenaje si está plantada en macetas. Le gusta el sol directo.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 14 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal14" tabindex="-1" aria-labelledby="exampleModalLabel14"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel14">LLANTÉN</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Plantago major</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Planta originaria de Europa, Asia y norte de África</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Las hojas se pueden comer crudas en ensaladas o cocidas como las espinacas.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores verdosas.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Excepto en los climas más secos, no es necesario regar más allá de la
+          lluvia.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Necesita un lugar ideal donde reciba muchas horas de luz al día pues
+          se trata de
+          una planta de sol.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 15 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal15" tabindex="-1" aria-labelledby="exampleModalLabel15"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel15">MANZANILA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">MetricariaRecutita</p>
+        <p class="lead text-body-emphasis">Familia: Crisantemo</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Originaria de Europa (zona de los Balcanes), norte de África y Asia
+          occidental
+        </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Planta Aromática que se utiliza sobre todo con fines medicinales y
+          terapéuticos.
+          Su nombre se debe a que su aroma recuerda al de una manzana, es de aroma
+          suave y dulce. Es sumamente atractiva ornamentalmente, pues de sus múltiples
+          y pequeñas ramas con finas hojas brotan hermosas flores de pétalos blancos y
+          con centro amarillo.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Cabezuelas florales compuestas por numerosas flores amarillas,
+          pequeñas,
+          tubulosas, centrales, cuyo conjunto conforma un receptáculo central, sobresaliente,
+          cónico y hueco, rodeadas de lígulas o pétalos blancos</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Usar suelo suelto bien drenado y rico en materias orgánicas. Se recomienda
+          plantarlas al sol, directamente en el suelo o en matera. Las plantas anuales
+          son las que cumplen su ciclo vegetativo en un año aprox. Se recomiendan
+          resiembras escalonadas.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Las flores secas se usan para hacer tizanas medicinalmente, Se
+          emplean las flores y
+          hojas paratrastornos digestivos (dolor de estómago, indigestión, dispepsia, cólicos,
+          diarreas), afecciones renales y de la vejiga, dolores menstruales. En forma externa
+          se usa para lavar heridas superficiales, tiene propiedades antiespasmódicas, se
+          recomienda para dolores de reumatismo, contusiones, picaduras de insectos,
+          irritaciones e infecciones en la boca, ojos irritados, hemorroides..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- creacion segunda fila -->
+
+<div class="album py-5 bg-body-tertiary mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/menta.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal16">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/mirto.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal17">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/oregano.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal18">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 16 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal16" tabindex="-1" aria-labelledby="exampleModalLabel16"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel16">MENTA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">MenthaPiperita</p>
+        <p class="lead text-body-emphasis">Familia: Labiadas</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Originarias de Europa cuyo cultivo se inició en 1750 en Inglaterra y
+          desde allí se extendió
+          a Asia, América del Norte y Australia</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Es un hibrido natural entre menta Aquática y menta Spicata (Hierbabuena) con
+          hojas lanceoladas , de bordes dentados y flores morados, los tallos son de color
+          rojizo. De la planta se extrae aceite de menta.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores moradas.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Se puede hacer un semillero y trasplantar o sembrar directamente en el suelo
+          o
+          en materas. Regar abundantemente. La germinación es entre 10 y 12 días, su
+          periodo vegetativo es de 60 días y la distancia de cultivo indicada entre planta y
+          planta es de 25 y 30 cm.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Las hojas se usan como condimento en ensalada, salsa, pescado,
+          carne. Buena
+          como infusión, combate la fatiga en general y es digestiva y estimulante. Una
+          planta de menta puede dar hasta dos tazas de hojas por cosecha.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 17 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal17" tabindex="-1" aria-labelledby="exampleModalLabel17"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel17">MIRTO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Myrtus communis</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Nativa del sudeste de Europa y del norte de África
+        </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Tiene un olor apacible por sus flores fragantes.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores blancas perfumadas.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">El mirto lo has de cuidar con sol pleno o parcial en un lugar orientado al
+          oeste o al
+          sur, protegido del viento frío y seco. Si se cultiva como bonsái en interiores,
+          necesitará mucha luz y aire. En lugares de veranos tórridos y secos agradecerá
+          semisombra durante el caluroso verano.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Cuidar el mirto requiere riego regular (una vez por semana o más)
+          cuando la planta
+          es joven. Las plantas adultas prefieren un riego más profundo cada dos o cuatro
+          semanas. A la planta de mirto no le va bien el agua con altas concentraciones de
+          cal. Si tienes oportunidad, recolecta agua de lluvia para su riego..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 18 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal18" tabindex="-1" aria-labelledby="exampleModalLabel18"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel18">OREGANO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">OriganumVulgare</p>
+        <p class="lead text-body-emphasis">Familia: Labiadas</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Proviene de la zona mediterránea, extendiéndose por toda Europa y
+          Asia central
+        </p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Su nombre procede de las palabras griegas “oros” y “ganos” que significa
+          adorno
+          o alegría de la montaña. Planta robusta con tallos cuadrangulares, hojas
+          ovaladas y provistas de glándulas de esencia. Se considera planta silvestre y
+          planta de jardín.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores rosa-mava, crecen en grupos terminales muy poblados y se
+          utilizan secas
+          o frescos para rellenos y aderezos.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Se puede plantar directamente al suelo en arena abonada o en materas. La
+          germinación se dá entre 7 a 14 días y el periodo vegetativo es de 70 días, la
+          distancia de cultivo recomendada en suelo entre planta y planta es de 20 cm.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Las flores se utilizan para rellenos y aderezos y las hojas en
+          ensaladas, pizzas,
+          pescados al horno, adobos. Aún en pequeñas cantidades estimula la digestión,
+          sirve para tisanas digestivas y tiene valores tónicos, diuréticos, antioxidante,
+          antiinflamatorio y para combatir la tos. Es una planta rica en vitamina E y K,
+          hierro, fibra y ácidos grasos omega.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Seccion nueva  -->
+
+
+
+<div class="album1 py-5  mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/platanillo.png') }}"
+            class="bd-placeholder-img card-img-top " width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal19">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/romero.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-dark btn-sm btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal20">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/ruda.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal21">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 19 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal19" tabindex="-1" aria-labelledby="exampleModalLabel19"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel19">PLATANILLO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Heliconia bihai</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Común en la selva amazónica, y el Caribe</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Brinda alimento a los colibrís y a otras aves.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Tiene flores coloridas y duraderas.
+        </p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">La Heliconia necesita una exposición iluminadaa pero sin recibir
+          directamente
+          los rayos del sol. La temperatura deberá estar entre los 18-30 ºC. El suelo debe ser
+          arenoso y contener materia orgánica. Regar lo suficiente para que el suelo esté
+          siempre húmedo pero no encharcado.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Como necesitan una humedad ambiental alta es conveniente rociar las
+          hojas de
+          vez en cuando con agua sin cal. Abonar una vez al año con estiércol (1 kg por
+          planta)
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 20 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal20" tabindex="-1" aria-labelledby="exampleModalLabel20"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel20">ROMERO</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Salvia rosmarinus </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Nativa del Mediterráneo, del norte y sur de África, así como de Asia
+          Occidental</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Diferentes usos: es planta aromática para uso culinario y medicinal.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">No tienen</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">El romero es una planta que necesita un gran drenaje y una maceta donde no
+          se
+          acumule mucha agua, pues es una planta de ambientes secos. Coloca piedras en
+          el fondo de la maceta para ayudar a planta a drenar como lo necesita. Asegúrate
+          de que la maceta sea profunda, de preferencia. Riega cuando veas la tierra
+          totalmente seca, en invierno será una vez por semana y en temporada de calor, 2
+          veces por semana.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Necesita un lugar ideal donde reciba muchas horas de luz al día pues
+          se trata de
+          una planta de sol.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 21 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal21" tabindex="-1" aria-labelledby="exampleModalLabel21"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel21">RUDA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Ruta graveolens </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Planta originaria de Europa</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">no recomendable.</p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Amarillas.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Requiere bastante iluminación, por lo que sería conveniente mantenerla en
+          exterior o cerca de una ventana. Tolera el sol directo, ya que es resistente a las
+          quemaduras. Sin embargo, agradece algunas horas de sombra al día. El agua es
+          importante para esta planta, regar todas las semanas.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Es tóxica para los humanos si es ingerida en grandes cantidades.
+          Puede dañar el
+          rinón y el hígado.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- creacion segunda fila -->
+
+<div class="album py-5 bg-body-tertiary mb-4">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/sabila.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal22">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/te.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal23">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{ url_for('static', filename='imagenes/tomate.png') }}" class="bd-placeholder-img card-img-top "
+            width="100%" height="225">
+          <div class="card-body">
+            <div class="d-flex justify-content-center">
+              <button type="button" class="btn btn-sm btn-dark btn-view" data-bs-toggle="modal"
+                data-bs-target="#exampleModal24">Ver descripción</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para otras imágenes -->
+    </div>
+  </div>
+</div>
+
+<!-- Modal 22-->
+<div class="modal fade container-fluid modal-lg" id="exampleModal22" tabindex="-1" aria-labelledby="exampleModalLabel22"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel22">SÁBILA</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Inula montana</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Originaria de África, específicamente de la península de Arabia.</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">El aloe vera sirve para realizar mascarillas y zumos.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">No tienen</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">La planta requiere que la tierra se encuentre levemente humedecida, pero
+          nunca
+          encharcada. Precisa de un sistema de drenaje óptimo, ya que un insistente
+          exceso de agua la afecta. Ten en cuenta que, aunque tolera la luz directa a lo
+          largo de algunas horas.</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Abusar de una exposición a la luz solar puede acarrear quemaduras en
+          las hojas,
+          fundamentalmente si se produce en una temporada calurosa y con muchas horas
+          soleadas.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 23 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal23" tabindex="-1" aria-labelledby="exampleModalLabel23"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel23">TÉ</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="lead text-body-emphasis">Camellia sinensis</p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Es originaria de China</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">A partir de las hojas de esta planta se elabora el té. Dependiendo del grado
+          de
+          fermentación de las hojas obtendremos distintas variedades de té, ya sea té
+          verde, té blanco, rojo, etc.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Flores de color blanco con amarillo.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">Necesita de una zona húmeda y cálida, con algunas horas de sol. En maceta,
+          es
+          ideal mantenerlo a una altura entre 1 y 2.5 metros y usualmente se poda para que
+          tenga forma de arbusto y sea fácil la recolección de las hojas de té.
+        </p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 24 -->
+<div class="modal fade container-fluid modal-lg" id="exampleModal24" tabindex="-1" aria-labelledby="exampleModalLabel24"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-body-secondary">
+        <h3 class="plantatext modal-title fw-bold" id="exampleModalLabel24">TOMATE</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title fw-semibold">🌱NOMBRE CIENTÍFICO Y FAMILIAS</h4>
+        <p class="text-dark fw-bold">Solanumlycopersicum</p>
+        <p class="lead text-body-emphasis">Familia: Solanáceas </p>
+
+
+        <h4 class="modal-title fw-semibold text-end ">ORIGEN🌎</h4>
+        <p class="lead text-body-emphasis text-end">Es originario de los bajos Andes y en épocas prehispánicas fue
+          cultivado por los aztecas en México</p>
+
+        <h4 class="modal-title fw-semibold ">🌳POR QUÉ SEMBRAR</h4>
+        <p class="lead text-body-emphasis">Sus tallos trepadores pueden medir hasta 2.5 m, por lo cual necesitan tutor.
+        </p>
+
+        <h4 class="modal-title fw-semibold text-end  ">TIPO DE FLORES EN GIRARDOT🌻</h4>
+        <p class="lead text-body-emphasis text-end">Las flores amarillas aparecen agrupadas en inflorescencias de tipo
+          racimo
+          compuesto usualmente de dos a 12 flores. La flor tiene un diámetro de alrededor de ¾
+          de pulgada. La flor posee una corola amarilla en forma de estrella con seis pétalos.</p>
+
+        <h4 class="modal-title fw-semibold">🌨CUIDADOS</h4>
+        <p class="lead text-body-emphasis ">De hojas compuestas y recubiertas de una fina vellosidad. Se adapta a suelos
+          arcillosos o franco-arenoso, pero prefiere suelos sueltos, bien drenados y que
+          a su vez retengan humedad. Es recomendable incorporar materia orgánica al
+          terreno, requiere luz abundante. Se siembra en semillero, se trasplanta a los 18
+          días cuando la plántula tenga al menos 4 o 5 hojas. Su periodo vegetativo es
+          de 85 días. El fruto es de forma oval muy firme y lisa</p>
+
+        <h4 class="modal-title fw-semibold  text-end ">NOTA🌄</h4>
+        <p class="lead text-body-emphasis text-end">Se utilizan en la producción de sopa, jugo, salsa, “ketchup”, puré,
+          pasta y polvo de
+          tomate. Los tomates verdes se utilizan para encurtidos y conservas. De las semillas
+          del tomate se extrae aceite comestible no saturado. En el tomate hay presencia de
+          saponina, solanina e histamina, buena fuente de vitamina A, vitamina C y uno de
+          los pigmentos carotenoides que contiene la fruta madura del tomate es el licopeno
+          (lycopene), un pigmento rojo reconocido como un antioxidante.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+{% block js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var images = document.querySelectorAll(".card-img-top");
+
+    // Define una función para manejar los clics en las imágenes
+    function toggleImageSize(image) {
+      // Toggle (alternar) la clase 'enlarge' a la imagen cuando se hace clic
+      image.classList.toggle("enlarge");
+
+      // Si la imagen está agrandada
+      if (image.classList.contains("enlarge")) {
+        // Centra la imagen en la pantalla
+        image.style.left = "50%";
+        image.style.top = "50%";
+        image.style.transform = "translate(-50%, -50%)";
+        // Establece un alto máximo para la imagen
+        image.style.maxHeight = "90vh"; // El 90% de la altura visible del viewport
+      } else {
+        // Si la imagen está en su tamaño original, restablece las propiedades CSS
+        image.style.left = "";
+        image.style.top = "";
+        image.style.transform = "";
+        image.style.maxHeight = "";
+      }
+    }
+
+    // Itera sobre cada imagen y agrega un evento de clic
+    images.forEach(function (image) {
+      image.addEventListener("click", function () {
+        toggleImageSize(this);
+      });
+    });
+  });
+</script>
+{% endblock %}

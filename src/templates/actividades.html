@@ -1,0 +1,779 @@
+{% extends "./layout.html" %}
+
+{% block titulo %}
+Actividades
+{% endblock %}
+
+{% block estilos %}
+<style>
+    .imagenes {
+        background-size: cover;
+        background-position: center;
+
+    }
+
+    .imagen {
+        max-height: 500px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .letrag {
+        color: forestgreen;
+
+
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+
+    }
+
+    .contenedor-juego {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
+
+    .pieza {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-size: 300px 300px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+
+    #boton-reinicio {
+        margin-top: 20px;
+    }
+
+    #boton-reinicio2 {
+        margin-top: 25px;
+    }
+
+    #boton-reinicio3 {
+        margin-top: 25px;
+    }
+
+    #boton-reinicio4 {
+        margin-top: 45px;
+    }
+
+    .carta {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+    }
+
+    .ficha {
+        background-image: url("{{ url_for('static', filename='imagenes/horticultura.png') }}");
+        background-size: cover;
+    }
+
+    .main-image {
+        border: 2px dashed #ccc;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        /* Tamaño máximo de la imagen principal */
+        height: auto;
+    }
+
+    .draggable {
+        position: absolute;
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+<!-- Carrusel de bienbenida y reseña -->
+<section class="carousel-container ">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+        </div>
+        <div class="imagenes carousel-inner">
+            <div class="imagen carousel-item active">
+                <img src="{{ url_for('static', filename='imagenes/aprendizaje.png') }}" class="d-block w-100 img-fluid"
+                    alt="...">
+            </div>
+            <div class="imagen carousel-item shadow-sm">
+                <img src="{{ url_for('static', filename='imagenes/res.png') }}" class="d-block w-100 img-fluid"
+                    alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<!-- seccion de el mensaje de bienvenidos -->
+<section class="container-fluid  ">
+    <div class="row py-lg-5 container-fluid">
+        <div class="col-lg-6 col-md-8 mx-auto text-center ">
+            <h1 class=" letrag fw-bold text-center py-5">Bienvenidos</h1>
+            <!-- La imagen se agrega aquí con la función de un botón -->
+            <a href="http://teca.pythonanywhere.com/inicio_sesion"target="_blank">
+                <img src="{{ url_for('static', filename='imagenes/ingreso.png') }}" alt="Botón de Bienvenidos"
+                    class=" registro img-fluid " style="width: 200px; height: auto;">
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-8 mx-auto py-3">
+            <p class="lead text-body-emphasis">
+                ¡Bienvenidos al Aula Virtual!
+                Nos complace darles la más cordial bienvenida a nuestro entorno educativo de horticultura en línea,
+                diseñado especialmente para brindarles una experiencia de aprendizaje dinámica e interactiva. En este
+                espacio, encontrarán una variedad de actividades propuestas por nuestros los docentes, diseñadas con el
+                objetivo de estimular su curiosidad, fomentar su participación activa y facilitar su desarrollo
+                académico y personal para acompañar a los adultos del hogar anciano desamparado ubicado en Girardot,
+                Cundinamarca.
+                Les invitamos a explorar todas las posibilidades que ofrece este espacio virtual y a participar
+                activamente en las actividades propuestas por sus profesores. ¡Estamos emocionados de acompañarles en su
+                viaje de aprendizaje y crecimiento!
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Seccion de actividades  -->
+
+<section class="py-3 text-center container  ">
+    <div class="row ">
+        <div class="col-form-label-lg">
+            <h1 class=" letrag modal-title fw-semibold py-3">ACTIVIDADES</h1>
+            <p class="lead text-body-emphasis text-start">
+
+                "Las sesiones terapéuticas están diseñadas para brindar a los adultos mayores una experiencia
+                enriquecedora y estimulante a través del uso de flores. Durante estas sesiones, se realizan actividades
+                que permiten a los participantes interactuar con las flores de diversas formas, promoviendo así el
+                desarrollo de su motricidad fina. Estas actividades están diseñadas para ofrecer una experiencia
+                sensorial gratificante, donde los adultos mayores pueden explorar y disfrutar de la belleza y fragancia
+                de las flores mientras realizan acciones que requieren precisión y destreza manual. A través de estas
+                actividades, se busca no solo estimular la motricidad fina, sino también brindar un espacio para la
+                expresión creativa y el bienestar emocional de los participantes."
+            </p>
+
+        </div>
+    </div>
+</section>
+<!-- seccion de imagnes de vestidos  -->
+<section id="activiti">
+
+
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='imagenes/vestido.png') }}" class="img-fluid"
+                        alt="Imagen 1">
+                </div>
+                <a href="https://drive.usercontent.google.com/u/0/uc?id=1hmc9uNzk6RdMEhOcbmiIm0VOC5T0I4zx&export=download"
+                    class="btn  btn-dark btn-outline-success text-white mt-2">Descargar PDF</a>
+
+            </div>
+            <div class="col-md-6">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='imagenes/vestidoh.png') }}" class="img-fluid"
+                        alt="Imagen 2">
+                </div>
+                <a href="https://drive.usercontent.google.com/u/1/uc?id=1vF5PRg1Zf8gPxgJ9__R4UhpkTt5YJX7t&export=download"
+                    class="btn  btn-dark btn-outline-success text-white mt-2">Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="activiti">
+
+
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='imagenes/vestidob.png') }}" class="img-fluid"
+                        alt="Imagen 1">
+                </div>
+                <a href="https://drive.usercontent.google.com/u/0/uc?id=1Kf2HurfJ2m8F1-c0jNRKtQoTKKsQZHBN&export=download"
+                    class="btn  btn-dark btn-outline-success text-white mt-2">Descargar PDF</a>
+
+            </div>
+            <div class="col-md-6">
+                <div class="img-container">
+                    <img src="{{ url_for('static', filename='imagenes/vestidoi.png') }}" class="img-fluid"
+                        alt="Imagen 2">
+                </div>
+                <a href="https://drive.usercontent.google.com/u/1/uc?id=1FGSJBQKXXhSK8kV_J0w3nfABvGenHZvn&export=download"
+                    class="btn  btn-dark btn-outline-success text-white mt-2">Descargar PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  seccion de rompecabezas  -->
+<section class="bg-dark py-3">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center py-4">
+                <img src="{{ url_for('static', filename='imagenes/jardin.jpg') }}" class="img-fluid"
+                    alt="Imagen de referencia">
+            </div>
+            <div class="col-md-6 py-4">
+                <div id="contenedor-juego" class="contenedor-juego"></div>
+                <button id="boton-reinicio" class="btn btn-success btn-outline-warning  w-100"
+                    onclick="iniciarRompecabezas()">Reiniciar
+                    Rompecabezas</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Segundo rompecabezas  -->
+<section class="bg-success py-3">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center py-4">
+                <img src="{{ url_for('static', filename='imagenes/rosas.jpg') }}" class="img-fluid"
+                    alt="Imagen de referencia">
+            </div>
+            <div class="col-md-6 py-4">
+                <div id="contenedor-juego2" class="contenedor-juego"></div>
+                <button id="boton-reinicio2" class="btn btn-success btn-outline-warning  w-100 "
+                    onclick="iniciarRompecabezas2()">Reiniciar
+                    Rompecabezas</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Tercer rompecabezas  -->
+<section class="bg-dark py-3">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center py-4">
+                <img src="{{ url_for('static', filename='imagenes/plantas.jpg') }}" class="img-fluid"
+                    alt="Imagen de referencia">
+            </div>
+            <div class="col-md-6 py-4">
+                <div id="contenedor-juego3" class="contenedor-juego"></div>
+                <button id="boton-reinicio3" class="btn btn-success btn-outline-warning  w-100 "
+                    onclick="iniciarRompecabezas3()">Reiniciar
+                    Rompecabezas</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Cuarto rompecabezas -->
+<section class="bg-success py-3">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 d-flex justify-content-center align-items-center py-4">
+                <img src="{{ url_for('static', filename='imagenes/gerario.png') }}" class="img-fluid"
+                    alt="Imagen de referencia">
+            </div>
+            <div class="col-md-6 py-4">
+                <div id="contenedor-juego4" class="contenedor-juego"></div>
+                <button id="boton-reinicio4" class="btn btn-success btn-outline-warning  w-100 "
+                    onclick="iniciarRompecabezas4()">Reiniciar
+                    Rompecabezas</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- seccion de memoria de plantas -->
+<section class="py-4">
+    <section class="ficha py-4">
+        <div class=" container">
+            <h1 class="text-center fw-bold text-success">Memoria de Plantas</h1>
+            <div id="memoriaContainer" class="row row-cols-4 justify-content-center text-center"></div>
+            <button id="reiniciarBtn"
+                class="btn btn-success btn-outline-warning  w-100 mt- text-center">Reiniciar</button>
+            <div id="mensajeFinal" class="text-center mt-3"></div>
+        </div>
+    </section>
+</section>
+
+<!-- seccion de tesoro -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+{% block js %}
+
+<script>
+    function descargarPDF(rutaPDF) {
+        // Lógica para descargar el PDF
+        window.location.href = rutaPDF;
+    }
+
+    // Variables globales
+    let piezas = [];
+    let dimensiones = 3; // 3x3 piezas
+    let tamanoPieza = 100; // Tamaño de cada pieza en píxeles
+    let imagenUrl = "{{ url_for('static', filename='imagenes/jardin.jpg') }}"; // Ruta de la imagen
+
+    // Función para mezclar las piezas
+    function mezclarArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Inicialización del rompecabezas
+    function iniciarRompecabezas() {
+        let contenedorJuego = document.getElementById('contenedor-juego');
+        contenedorJuego.innerHTML = ''; // Limpiar el contenedor antes de reiniciar
+        piezas = []; // Reiniciar el array de piezas
+        let posiciones = [...Array(dimensiones * dimensiones).keys()];
+        mezclarArray(posiciones);
+
+        for (let i = 0; i < dimensiones * dimensiones; i++) {
+            let pieza = document.createElement('div');
+            pieza.classList.add('pieza');
+            pieza.style.backgroundImage = 'url(' + imagenUrl + ')';
+            let posicion = posiciones[i];
+            pieza.style.backgroundPosition = `-${(posicion % dimensiones) * tamanoPieza}px -${Math.floor(posicion / dimensiones) * tamanoPieza}px`;
+            pieza.style.left = `${(i % dimensiones) * tamanoPieza}px`;
+            pieza.style.top = `${Math.floor(i / dimensiones) * tamanoPieza}px`;
+            pieza.setAttribute('data-posicion', posicion);
+            pieza.setAttribute('draggable', true);
+            pieza.ondragstart = arrastrarPieza;
+            pieza.ondragover = permitirSoltar;
+            pieza.ondrop = soltarPieza;
+            contenedorJuego.appendChild(pieza);
+            piezas.push(pieza);
+        }
+    }
+
+    // Funciones de arrastrar y soltar
+    function arrastrarPieza(event) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.posicion);
+    }
+
+    function permitirSoltar(event) {
+        event.preventDefault();
+    }
+
+    function soltarPieza(event) {
+        event.preventDefault();
+        let origen = event.dataTransfer.getData('text/plain');
+        let destino = event.target.dataset.posicion;
+        let piezaOrigen = piezas.find(pieza => pieza.dataset.posicion === origen);
+        let piezaDestino = event.target;
+
+        // Intercambia las posiciones de fondo si las piezas son diferentes
+        if (piezaOrigen !== piezaDestino) {
+            let bgPosOrigen = piezaOrigen.style.backgroundPosition;
+            piezaOrigen.style.backgroundPosition = piezaDestino.style.backgroundPosition;
+            piezaDestino.style.backgroundPosition = bgPosOrigen;
+
+            // Intercambia los atributos de data-posicion
+            piezaOrigen.dataset.posicion = destino;
+            piezaDestino.dataset.posicion = origen;
+        }
+
+        // Verifica si el rompecabezas está completo
+        verificarSiCompleto();
+    }
+
+    function verificarSiCompleto() {
+        let esCompleto = piezas.every((pieza, index) => {
+            return parseInt(pieza.dataset.posicion) === index;
+        });
+
+        if (esCompleto) {
+            setTimeout(function () {
+                alert('¡Felicidades! Has completado el rompecabezas correctamente.');
+            }, 100);
+        }
+    }
+
+    // Iniciar el juego
+    iniciarRompecabezas();
+
+    //rompecabezas 2
+
+    // Variables globales para el segundo rompecabezas
+    let piezas2 = [];
+    let dimensiones2 = 3; // 3x3 piezas
+    let tamanoPieza2 = 100; // Tamaño de cada pieza en píxeles
+    let imagenUrl2 = "{{ url_for('static', filename='imagenes/rosas.jpg') }}"; // Ruta de la imagen
+
+    // Función para mezclar las piezas
+    function mezclarArray2(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Inicialización del rompecabezas
+    function iniciarRompecabezas2() {
+        let contenedorJuego2 = document.getElementById('contenedor-juego2');
+        contenedorJuego2.innerHTML = ''; // Limpiar el contenedor antes de reiniciar
+        piezas2 = []; // Reiniciar el array de piezas
+        let posiciones2 = [...Array(dimensiones2 * dimensiones2).keys()];
+        mezclarArray2(posiciones2);
+
+        for (let i = 0; i < dimensiones2 * dimensiones2; i++) {
+            let pieza2 = document.createElement('div');
+            pieza2.classList.add('pieza');
+            pieza2.style.backgroundImage = 'url(' + imagenUrl2 + ')';
+            let posicion2 = posiciones2[i];
+            pieza2.style.backgroundPosition = `-${(posicion2 % dimensiones2) * tamanoPieza2}px -${Math.floor(posicion2 / dimensiones2) * tamanoPieza2}px`;
+            pieza2.style.left = `${(i % dimensiones2) * tamanoPieza2}px`;
+            pieza2.style.top = `${Math.floor(i / dimensiones2) * tamanoPieza2}px`;
+            pieza2.setAttribute('data-posicion', posicion2);
+            pieza2.setAttribute('draggable', true);
+            pieza2.ondragstart = arrastrarPieza2;
+            pieza2.ondragover = permitirSoltar2;
+            pieza2.ondrop = soltarPieza2;
+            contenedorJuego2.appendChild(pieza2);
+            piezas2.push(pieza2);
+        }
+    }
+
+    // Funciones de arrastrar y soltar
+    function arrastrarPieza2(event) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.posicion);
+    }
+
+    function permitirSoltar2(event) {
+        event.preventDefault();
+    }
+
+    function soltarPieza2(event) {
+        event.preventDefault();
+        let origen2 = event.dataTransfer.getData('text/plain');
+        let destino2 = event.target.dataset.posicion;
+        let piezaOrigen2 = piezas2.find(pieza => pieza.dataset.posicion === origen2);
+        let piezaDestino2 = event.target;
+
+        // Intercambia las posiciones de fondo si las piezas son diferentes
+        if (piezaOrigen2 !== piezaDestino2) {
+            let bgPosOrigen2 = piezaOrigen2.style.backgroundPosition;
+            piezaOrigen2.style.backgroundPosition = piezaDestino2.style.backgroundPosition;
+            piezaDestino2.style.backgroundPosition = bgPosOrigen2;
+
+            // Intercambia los atributos de data-posicion
+            piezaOrigen2.dataset.posicion = destino2;
+            piezaDestino2.dataset.posicion = origen2;
+        }
+
+        // Verifica si el rompecabezas está completo
+        verificarSiCompleto2();
+    }
+
+    function verificarSiCompleto2() {
+        let esCompleto2 = piezas2.every((pieza, index) => {
+            return parseInt(pieza.dataset.posicion) === index;
+        });
+
+        if (esCompleto2) {
+            setTimeout(function () {
+                alert('¡Felicidades! Has completado el rompecabezas correctamente.');
+            }, 100);
+        }
+    }
+
+    // Iniciar el juego
+    iniciarRompecabezas2();
+
+    //rompecabezas 3
+
+    // Variables globales para el tercer rompecabezas
+    let piezas3 = [];
+    let dimensiones3 = 3; // 3x3 piezas
+    let tamanoPieza3 = 100; // Tamaño de cada pieza en píxeles
+    let imagenUrl3 = "{{ url_for('static', filename='imagenes/plantas.jpg') }}"; // Ruta de la nueva imagen
+
+    // Función para mezclar las piezas
+    function mezclarArray3(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Inicialización del rompecabezas
+    function iniciarRompecabezas3() {
+        let contenedorJuego3 = document.getElementById('contenedor-juego3');
+        contenedorJuego3.innerHTML = ''; // Limpiar el contenedor antes de reiniciar
+        piezas3 = []; // Reiniciar el array de piezas
+        let posiciones3 = [...Array(dimensiones3 * dimensiones3).keys()];
+        mezclarArray3(posiciones3);
+
+        for (let i = 0; i < dimensiones3 * dimensiones3; i++) {
+            let pieza3 = document.createElement('div');
+            pieza3.classList.add('pieza');
+            pieza3.style.backgroundImage = 'url(' + imagenUrl3 + ')';
+            let posicion3 = posiciones3[i];
+            pieza3.style.backgroundPosition = `-${(posicion3 % dimensiones3) * tamanoPieza3}px -${Math.floor(posicion3 / dimensiones3) * tamanoPieza3}px`;
+            pieza3.style.left = `${(i % dimensiones3) * tamanoPieza3}px`;
+            pieza3.style.top = `${Math.floor(i / dimensiones3) * tamanoPieza3}px`;
+            pieza3.setAttribute('data-posicion', posicion3);
+            pieza3.setAttribute('draggable', true);
+            pieza3.ondragstart = arrastrarPieza3;
+            pieza3.ondragover = permitirSoltar3;
+            pieza3.ondrop = soltarPieza3;
+            contenedorJuego3.appendChild(pieza3);
+            piezas3.push(pieza3);
+        }
+    }
+
+    // Funciones de arrastrar y soltar
+    function arrastrarPieza3(event) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.posicion);
+    }
+
+    function permitirSoltar3(event) {
+        event.preventDefault();
+    }
+
+    function soltarPieza3(event) {
+        event.preventDefault();
+        let origen3 = event.dataTransfer.getData('text/plain');
+        let destino3 = event.target.dataset.posicion;
+        let piezaOrigen3 = piezas3.find(pieza => pieza.dataset.posicion === origen3);
+        let piezaDestino3 = event.target;
+
+        // Intercambia las posiciones de fondo si las piezas son diferentes
+        if (piezaOrigen3 !== piezaDestino3) {
+            let bgPosOrigen3 = piezaOrigen3.style.backgroundPosition;
+            piezaOrigen3.style.backgroundPosition = piezaDestino3.style.backgroundPosition;
+            piezaDestino3.style.backgroundPosition = bgPosOrigen3;
+
+            // Intercambia los atributos de data-posicion
+            piezaOrigen3.dataset.posicion = destino3;
+            piezaDestino3.dataset.posicion = origen3;
+        }
+
+        // Verifica si el rompecabezas está completo
+        verificarSiCompleto3();
+    }
+
+    function verificarSiCompleto3() {
+        let esCompleto3 = piezas3.every((pieza, index) => {
+            return parseInt(pieza.dataset.posicion) === index;
+        });
+
+        if (esCompleto3) {
+            setTimeout(function () {
+                alert('¡Felicidades! Has completado el rompecabezas correctamente.');
+            }, 100);
+        }
+    }
+
+    // Iniciar el juego
+    iniciarRompecabezas3();
+
+    //rompecabezas 4
+    // Variables globales para el cuarto rompecabezas
+    let piezas4 = [];
+    let dimensiones4 = 3; // 3x3 piezas
+    let tamanoPieza4 = 100; // Tamaño de cada pieza en píxeles
+    let imagenUrl4 = "{{ url_for('static', filename='imagenes/gerario.png') }}"; // Ruta de la nueva imagen
+
+    // Función para mezclar las piezas
+    function mezclarArray4(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // Inicialización del rompecabezas
+    function iniciarRompecabezas4() {
+        let contenedorJuego4 = document.getElementById('contenedor-juego4');
+        contenedorJuego4.innerHTML = ''; // Limpiar el contenedor antes de reiniciar
+        piezas4 = []; // Reiniciar el array de piezas
+        let posiciones4 = [...Array(dimensiones4 * dimensiones4).keys()];
+        mezclarArray4(posiciones4);
+
+        for (let i = 0; i < dimensiones4 * dimensiones4; i++) {
+            let pieza4 = document.createElement('div');
+            pieza4.classList.add('pieza');
+            pieza4.style.backgroundImage = 'url(' + imagenUrl4 + ')';
+            let posicion4 = posiciones4[i];
+            pieza4.style.backgroundPosition = `-${(posicion4 % dimensiones4) * tamanoPieza4}px -${Math.floor(posicion4 / dimensiones4) * tamanoPieza4}px`;
+            pieza4.style.left = `${(i % dimensiones4) * tamanoPieza4}px`;
+            pieza4.style.top = `${Math.floor(i / dimensiones4) * tamanoPieza4}px`;
+            pieza4.setAttribute('data-posicion', posicion4);
+            pieza4.setAttribute('draggable', true);
+            pieza4.ondragstart = arrastrarPieza4;
+            pieza4.ondragover = permitirSoltar4;
+            pieza4.ondrop = soltarPieza4;
+            contenedorJuego4.appendChild(pieza4);
+            piezas4.push(pieza4);
+        }
+    }
+
+    // Funciones de arrastrar y soltar
+    function arrastrarPieza4(event) {
+        event.dataTransfer.setData('text/plain', event.target.dataset.posicion);
+    }
+
+    function permitirSoltar4(event) {
+        event.preventDefault();
+    }
+
+    function soltarPieza4(event) {
+        event.preventDefault();
+        let origen4 = event.dataTransfer.getData('text/plain');
+        let destino4 = event.target.dataset.posicion;
+        let piezaOrigen4 = piezas4.find(pieza => pieza.dataset.posicion === origen4);
+        let piezaDestino4 = event.target;
+
+        // Intercambia las posiciones de fondo si las piezas son diferentes
+        if (piezaOrigen4 !== piezaDestino4) {
+            let bgPosOrigen4 = piezaOrigen4.style.backgroundPosition;
+            piezaOrigen4.style.backgroundPosition = piezaDestino4.style.backgroundPosition;
+            piezaDestino4.style.backgroundPosition = bgPosOrigen4;
+
+            // Intercambia los atributos de data-posicion
+            piezaOrigen4.dataset.posicion = destino4;
+            piezaDestino4.dataset.posicion = origen4;
+        }
+
+        // Verifica si el rompecabezas está completo
+        verificarSiCompleto4();
+    }
+
+    function verificarSiCompleto4() {
+        let esCompleto4 = piezas4.every((pieza, index) => {
+            return parseInt(pieza.dataset.posicion) === index;
+        });
+
+        if (esCompleto4) {
+            setTimeout(function () {
+                alert('¡Felicidades! Has completado el rompecabezas correctamente.');
+            }, 100);
+        }
+    }
+
+    // Iniciar el juego
+    iniciarRompecabezas4();
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartas = ['🌻', '🌷', '🌼', '🌹', '🌸', '🌺', '💐', '🍀'];
+        const cartaDuplicada = cartas.concat(cartas).sort(() => Math.random() - 0.5).slice(0, 16); // Seleccionamos solo las primeras 16 cartas
+        let cartaAbierta = null;
+        let parejasEncontradas = 0;
+        let bloquearInput = false;
+        let cartasVolteadas = false;
+
+        const memoriaContainer = document.getElementById('memoriaContainer');
+        const mensajeFinal = document.getElementById('mensajeFinal');
+
+        function crearCarta(carta, index) {
+            const div = document.createElement('div');
+            div.classList.add('col');
+            const cartaDiv = document.createElement('div');
+            cartaDiv.classList.add('carta');
+            cartaDiv.setAttribute('data-index', index);
+            cartaDiv.textContent = '';
+            cartaDiv.addEventListener('click', (event) => {
+                if (!bloquearInput && !event.currentTarget.classList.contains('encontrada') && event.currentTarget !== cartaAbierta && cartasVolteadas) {
+                    mostrarCarta(event.currentTarget);
+                }
+            });
+            div.appendChild(cartaDiv);
+            return div;
+        }
+
+        function mostrarCarta(carta) {
+            carta.textContent = cartaDuplicada[parseInt(carta.dataset.index)];
+            carta.classList.add('seleccionada');
+
+            if (!cartaAbierta) {
+                cartaAbierta = carta;
+            } else {
+                bloquearInput = true;
+                setTimeout(() => {
+                    if (cartaAbierta.textContent !== carta.textContent) {
+                        cartaAbierta.textContent = '';
+                        carta.textContent = '';
+                    } else {
+                        cartaAbierta.classList.add('encontrada');
+                        carta.classList.add('encontrada');
+                        parejasEncontradas++;
+                        mostrarMensajeFinal(); // Mostramos el mensaje después de cada pareja encontrada
+                    }
+                    cartaAbierta.classList.remove('seleccionada');
+                    carta.classList.remove('seleccionada');
+                    cartaAbierta = null;
+                    bloquearInput = false;
+                }, 1000);
+            }
+        }
+
+        function voltearCartas() {
+            setTimeout(() => {
+                const cartasElementos = document.querySelectorAll('.carta');
+                cartasElementos.forEach(carta => {
+                    carta.textContent = '';
+                });
+                cartasVolteadas = true;
+            }, 5000);
+        }
+
+        function mostrarMensajeFinal() {
+            if (parejasEncontradas === cartas.length / 1) {
+                alert('¡Felicidades! Has completado el juego correctamente.');
+            }
+        }
+
+
+        function iniciarJuego() {
+            memoriaContainer.innerHTML = '';
+            parejasEncontradas = 0;
+            cartaDuplicada.forEach((carta, index) => {
+                const cartaDiv = crearCarta(carta, index);
+                memoriaContainer.appendChild(cartaDiv);
+            });
+            voltearCartas();
+        }
+
+        iniciarJuego();
+
+        const reiniciarBtn = document.getElementById('reiniciarBtn');
+        reiniciarBtn.addEventListener('click', iniciarJuego);
+    });
+</script>
+{% endblock %}

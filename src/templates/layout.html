@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imagenes/icon.png') }}" />
+    <title>
+
+        {% block titulo %}
+
+        {% endblock %}
+    </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        @import "carousel";
+
+        /* Elimina las flechas de los elementos del menú desplegable en Bootstrap */
+        .navbar-nav .dropdown-toggle::after {
+            display: none;
+
+        }
+
+
+
+        /* Asegúrate de que los submenús estén ocultos inicialmente */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+
+
+        /* Muestra el submenú cuando el usuario coloca el cursor sobre el elemento del menú principal */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Tamaño de la letra de la barrra de navegacion  */
+        a.nav-link.dropdown-toggle {
+            font-size: 15px;
+        }
+
+        a.nav-link.active {
+            font-size: 15px;
+
+        }
+
+
+
+        /* Transición suave para todos los elementos de la navbar */
+        .navbar a,
+        .navbar button {
+            transition: color 0.3s ease;
+        }
+
+        /* Cambiar el color de fondo de los dropdown items al pasar el cursor */
+        .dropdown-item:hover {
+            background-color: #198754;
+            /* Elige el color que prefieras */
+            color: #f8f9fa;
+        }
+
+        .nav-link.active:hover {
+            color: #198754;
+
+        }
+
+        /* Cambiar el color del texto de los enlaces al pasar el cursor */
+        .nav-link:hover,
+        .navbar-brand:hover {
+            color: #198754;
+            cursor: pointer;
+            /* Cambia el cursor al pasar sobre los elementos */
+            padding: 7px 10px;
+            /* Ajusta el padding para hacer el botón más ancho */
+
+        }
+
+        .navbar-expand-lg .bg-body-tertiary {
+            background-color: black;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+
+    {% block estilos %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    {% block header %}
+    <header>
+        <!-- Aca creamos la barra de navegacion -->
+        <section>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+                <div class="container-fluid ">
+                    <a class="navbar-brand fw-bold " href="{{ url_for('index') }}">AMBIENTE VIRTUAL DE HORTICULTURA </a>
+                    <button class="navbar-toggler   " style="color: black; border-color: black;"
+                        data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent " aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon "></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <!--Boton inicio  -->
+                            <li class="nav-item ">
+                                <a class="nav-link active fw-bold  " aria-current="page"
+                                    href="{{ url_for('index') }}">INICIO</a>
+                            </li>
+                            <!--  -->
+
+                            <!-- Boton Historia -->
+                            <li class="nav-item ">
+                                <a class="nav-link active fw-bold  " aria-current="page"
+                                    href="{{ url_for('historia') }}">HISTORIA</a>
+                            </li>
+
+                            <!--  -->
+
+                            <!-- Boton de plantas y abuelos -->
+                            <li class="nav-item ">
+                                <a class="nav-link active  fw-bold" aria-current="page" id="searchableContent"
+                                    href="{{ url_for('plantas') }}">PLANTAS</a>
+                            </li>
+                            <!--  -->
+
+                            <!-- Boton de escenarios verdes -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle fw-bold" href="" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="color: black; ">
+                                    ESCENARIOS VERDES
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{ url_for('escenarios') }}">MATERIAL VISUAL</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ url_for('actividades') }}">ACTIVIDADES</a>
+                                    </li>
+                                </ul>
+                                <!--  -->
+
+                                <!-- Boton de registro -->
+                            <li class="nav-item">
+                                <a class="nav-link active fw-bold" aria-current="page" href="http://teca.pythonanywhere.com/inicio_sesion"
+                                    target="_blank">REGISTRO</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class=" py-1  bg-black">
+                <div class="container"> </div>
+            </div>
+        </section>
+    </header>
+
+    {% endblock %}
+
+    <main>
+        {% block contenido %}
+
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+    <footer>
+        <section>
+            <div class="container-fluid bg-black">
+                <footer class="py-3 my-4 footer">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Inicio</a></li>
+                        <li class="nav-item"><a href="{{ url_for('plantas') }}"
+                                class="nav-link px-2 text-white">Plantas</a></li>
+                        <li class="nav-item"><a href="{{ url_for('actividades') }}"
+                                class="nav-link px-2 text-white">Actividades</a></li>
+                        <li class="nav-item"><a href="https://wa.me/573214697235" target="_blank"
+                                class="nav-link px-2 text-white">Ayuda</a></li>
+                        <li class="nav-item"><a href="{{ url_for('historia') }}" class="nav-link px-2 text-white">Sobre
+                                nosotros</a></li>
+                    </ul>
+                    <p class="text-center text-white">&copy; 2024 Ambiente virtual, Horticultura</p>
+                </footer>
+            </div>
+        </section>
+    </footer>
+
+    {% endblock %}
+    <!-- place footer here -->
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    {% block js %}
+
+    {% endblock %}
+</body>
+
+</html>

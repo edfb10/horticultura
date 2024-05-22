@@ -1,0 +1,506 @@
+{% extends "./layout.html" %}
+
+{% block titulo %}
+Material visual
+{% endblock %}
+
+{% block estilos %}
+<style>
+    .verde {
+        background-color: forestgreen;
+    }
+
+    .letra {
+        color: forestgreen;
+    }
+
+    .lblanca {
+        color: white;
+    }
+
+    /* Margen entre contenidos*/
+    .margin {
+        margin-top: 95px;
+    }
+
+    /*aumento de las imagenes */
+    .aumento:hover img {
+        transform: scale(1.3);
+        /* Aumenta la escala al 110% */
+        transition: transform 0.3s ease-in;
+        /* Agrega una transición suave */
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+
+<section class="py-3 text-center container  ">
+    <div class="row ">
+        <div class="col-form-label-lg">
+            <h1 class=" letra modal-title fw-semibold py-3">VIDEOS</h1>
+            <p class="lead text-body-emphasis text-start">El objetivo de estos videos es crear una experiencia inmersiva
+                que estimule los sentidos y evoque recuerdos a través de la observación de paisajes naturales. Al
+                presentar escenas de la naturaleza, como el mar, un cañón selvático o una fuente en un lago, se busca
+                revitalizar el sistema nervioso y promover la relajación y el bienestar. Estas imágenes buscan ser una
+                herramienta terapéutica para personas mayores, ayudándoles a reconectar con la naturaleza y a encontrar
+                momentos de tranquilidad y calma en su día a día. Además, se pretende fomentar la participación activa
+                al invitar a los espectadores a compartir sus recuerdos y experiencias mientras observan los videos,
+                creando así un espacio de interacción y conexión emocional..</p>
+
+        </div>
+    </div>
+</section>
+<section class="verde container-fluid">
+    <div class="container py-4 mb-3">
+        <div class="card featurette">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/ygW8M07MOtU?si=RgDKVZke7i88nv2u"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center mb-3 ">
+                        <div class="text-center text-md-start">
+                            <h2 class=" letra featurette-heading fw-bold lh-1 mb-3 text-center"> Reencuentro con la
+                                Naturaleza<span class="text-muted text-center"> Olas del Mar 🌊</span></h2>
+                            <p class=" lead text-body-emphasis py-3">Sumérgete en la serenidad y la belleza del mar a
+                                través de este cautivador video. Las olas rompiendo suavemente en la orilla te
+                                transportarán a un mundo de calma y tranquilidad. Con cada ola que se estrella contra la
+                                costa, sentirás cómo tus sentidos se revitalizan y tu mente se relaja. Observa cómo el
+                                agua cristalina refleja los rayos del sol, creando un espectáculo de luces y sombras que
+                                danzan en la superficie. A medida que te sumerges en este paisaje natural, te invito a
+                                recordar momentos pasados, a evocar los olores del mar y a dejarte llevar por la
+                                sensación de libertad que solo la naturaleza puede ofrecer.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seccion de video1 -->
+<section class="container-fluid">
+    <div class="container-fluid bg-dark py-4  mb-4">
+        <div class="container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto text-center">
+                    <h2 class="letra featurette-heading fw-bold lh-2 mb-3 text-center">Jardín de Encanto<span
+                            class="lblanca  text-center"> Un Oasis de Belleza 🌿</span></h2><br>
+                </div>
+            </div>
+            <div class="card featurette">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 d-flex align-items-center mb-3">
+                            <div class="text-center text-md-end"> <!-- Alineación del texto -->
+
+                                <p class="text-start lead text-body-emphasis">Sumérgete en la exuberancia y la serenidad
+                                    de este encantador jardín, donde la naturaleza florece en todo su esplendor. Las
+                                    delicadas flores bailan con gracia con la brisa suave, mientras los árboles ofrecen
+                                    su sombra reconfortante. Los colores vibrantes y los aromas embriagadores te
+                                    envuelven, transportándote a un mundo de calma y armonía. Observa cómo las mariposas
+                                    revolotean entre las flores y las abejas zumban con diligencia, añadiendo vida a
+                                    este paisaje idílico. A medida que te sumerges en la belleza de este jardín, te
+                                    invito a recordar momentos felices, a evocar los aromas de la naturaleza y a
+                                    encontrar paz en la quietud de este oasis verde.</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <!-- Alineación de la imagen -->
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/AvH79ptM5hA?si=8i55vTrxG6wB87-b"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- seccion de video 2 -->
+<section class="verde container-fluid">
+    <div class="container py-4 mb-3">
+        <div class="card featurette">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/QjHnIO6ZcOU?si=XqouSyk8A94u72zw"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center mb-3 ">
+                        <div class="text-center text-md-start">
+                            <h2 class=" letra featurette-heading fw-bold lh-1 mb-3 text-center">Lago de Serenidad <span
+                                    class="text-muted text-center"> Reflejos de Tranquilidad 🍃</span></h2>
+                            <p class="text-start lead text-body-emphasis"> Adéntrate en la majestuosidad tranquila de
+                                este hermoso lago, donde las aguas cristalinas se extienden hasta donde alcanza la
+                                vista. La superficie del lago refleja el cielo azul y las montañas que lo rodean,
+                                creando un paisaje de serenidad y belleza incomparables. El suave susurro de la brisa
+                                acaricia la superficie del agua, mientras los pájaros cantan en los árboles cercanos.
+                                Observa cómo los reflejos danzan sobre las olas, creando un espectáculo hipnotizante de
+                                luces y sombras. Sumérgete en la quietud de este entorno natural y deja que la
+                                tranquilidad del lago te envuelva. Es un lugar perfecto para reflexionar, relajarse y
+                                reconectar con la naturaleza en su estado más puro.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seccion de video1 -->
+<section class="container-fluid">
+    <div class="container-fluid bg-dark py-4  mb-4">
+        <div class="container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto text-center">
+                    <h2 class="letra featurette-heading fw-bold lh-2 mb-3 text-center">Río de Recuerdos <span
+                            class="lblanca text-center">Un Viaje Sereno 🏞</span></h2><br>
+                </div>
+            </div>
+            <div class="card featurette">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 d-flex align-items-center mb-3">
+                            <div class="text-center text-md-end"> <!-- Alineación del texto -->
+
+                                <p class="text-start lead text-body-emphasis">Déjate llevar por las suaves corrientes de
+                                    este hermoso río que serpentea entre los bosques verdes. Las aguas cristalinas
+                                    fluyen con gracia, reflejando el resplandor del sol que se filtra entre las ramas de
+                                    los árboles. El sonido calmante del agua burbujeante te envuelve, mientras te
+                                    sumerges en la paz y la serenidad de este entorno natural. Observa cómo la vida
+                                    salvaje se congrega en las orillas, añadiendo un toque de vida a este paisaje
+                                    tranquilo. A medida que observas este río, te invito a dejarte llevar por tus
+                                    recuerdos más preciados, a evocar los aromas del bosque y a reconectar con la
+                                    naturaleza en su estado más puro.</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <!-- Alineación de la imagen -->
+
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/kHw7p4GUWpw?si=1TSvjgCRmN0r_im2"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- videos 5 y 6 -->
+<section class="verde container-fluid">
+    <div class="container py-4 mb-3">
+        <div class="card featurette">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 d-flex justify-content-center justify-content-md-start py-5">
+
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/CvdeHLl8h5A?si=gnlUZO3gnpLcG8MU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center mb-3 ">
+                        <div class="text-center text-md-start">
+                            <h2 class=" letra featurette-heading fw-bold lh-1 mb-3 text-center">Entre las Alturas <span
+                                    class="text-muted text-center"> Explorando el Cañón 🏕</span></h2>
+                            <p class="text-start lead text-body-emphasis">Embárcate en una aventura visual a través de
+                                las majestuosas alturas de este impresionante cañón, donde la grandeza de la naturaleza
+                                se revela en cada recodo del paisaje. Desde lo alto de los acantilados, se vislumbra un
+                                río serpenteante que se pierde en la distancia, pintando un cuadro de misterio y
+                                asombro. Las paredes rocosas del cañón se alzan imponentes a ambos lados, creando un
+                                espectáculo de formas y texturas que desafían la imaginación. El sol brilla en lo alto,
+                                iluminando el paisaje con una luz dorada y cálida. Observa cómo las aves planean sobre
+                                el cañón, disfrutando de las corrientes ascendentes que se elevan desde el fondo.
+                                Sumérgete en la grandeza de este lugar único y deja que la belleza natural te inspire y
+                                te asombre.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seccion de video1 -->
+<section class="container-fluid">
+    <div class="container-fluid bg-dark py-4  mb-4">
+        <div class="container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto text-center">
+                    <h2 class=" letra featurette-heading fw-bold lh-2 mb-3 text-center">Explorando la Selva <span
+                            class="lblanca text-center">Misterios del Cañón🗾</span></h2><br>
+                </div>
+            </div>
+            <div class="card featurette">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 d-flex align-items-center mb-3">
+                            <div class="text-center text-md-end"> <!-- Alineación del texto -->
+
+                                <p class="text-start  lead text-body-emphasis">Sumérgete en la exuberante y misteriosa
+                                    selva a través de este cautivador recorrido por un cañón perdido en lo más profundo
+                                    de la naturaleza. Enclavado entre densos árboles y exuberante vegetación, el cañón
+                                    se convierte en un oasis de vida en medio de la selva. A lo lejos, se divisa un río
+                                    serpenteante que fluye con calma, reflejando los intensos verdes del dosel forestal.
+                                    El eco de los sonidos de la selva llena el aire, desde el canto de aves exóticas
+                                    hasta el susurro de las hojas mecidas por la brisa. Las paredes del cañón, cubiertas
+                                    de musgo y enredaderas, ofrecen un espectáculo de belleza natural y misterio. Cada
+                                    paso es una aventura, cada rincón un descubrimiento. Prepárate para explorar los
+                                    secretos ocultos de este cañón en la selva y dejar que su magia te envuelva.</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <!-- Alineación de la imagen -->
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/G_IaqWfNVdU?si=F_M7BT00J76QG806"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seccion video 7 y 8  -->
+<section class="verde container-fluid">
+    <div class="container py-4 mb-3">
+        <div class="card featurette">
+            <div class="card-body">
+                <div class="row">
+                    <div class=" margin col-md-4 d-flex justify-content-center justify-content-md-start ">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/fLBWOKsdDRg?si=eYD0dB_23RVGxjre"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+                    </div>
+                    <div class="col-md-8 d-flex align-items-center mb-3 ">
+                        <div class="text-center text-md-start">
+                            <h2 class=" letra featurette-heading fw-bold lh-1 mb-3 text-center">Horizonte Infinito <span
+                                    class="text-muted text-center">Mirada al Mar 🏖</span></h2><br>
+                            <p class="text-start lead text-body-emphasis"> Embárcate en un viaje visual a través de la
+                                inmensidad del océano con esta impresionante vista al mar. Desde lo alto de un
+                                acantilado, la mirada se extiende hasta donde alcanza el horizonte, donde el cielo y el
+                                mar se encuentran en un abrazo eterno. Las olas rompen con suavidad en la costa, creando
+                                una melodía calmante que acompaña la vista panorámica del océano. Los tonos azules y
+                                turquesas del agua se mezclan con el resplandor dorado del sol, creando un espectáculo
+                                de colores que cautiva los sentidos. En la lejanía, se divisan veleros navegando en el
+                                horizonte, añadiendo un toque de serenidad y libertad a la escena. Observa cómo las
+                                gaviotas revolotean en el cielo y el viento acaricia tu rostro, mientras te sumerges en
+                                la vastedad y la belleza del mar. Es un recordatorio de la grandeza y la majestuosidad
+                                de la naturaleza, que invita a la reflexión y la admiración ante la maravilla del
+                                océano.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- seccion de video1 -->
+<section class="container-fluid">
+    <div class="container-fluid bg-dark py-4  mb-4">
+        <div class="container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto text-center">
+                    <h2 class=" letra featurette-heading fw-bold lh-2 mb-3 text-center">Tranquilidad en Doble Dimensión
+                        <span class="lblanca text-center"> La Fuente del Lago 🍂</span></h2><br>
+                </div>
+            </div>
+            <div class="card featurette">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8 d-flex align-items-center mb-3">
+                            <div class="text-center text-md-end"> <!-- Alineación del texto -->
+
+                                <p class="text-start lead text-body-emphasis">Sumérgete en la tranquilidad de un entorno
+                                    idílico donde la naturaleza se manifiesta en su máxima expresión. En el centro de un
+                                    apacible lago, una fuente de agua irrumpe con gracia y elegancia, añadiendo un toque
+                                    de magia a este paisaje sereno. Las aguas cristalinas del lago reflejan el cielo
+                                    azul y los verdes bosques circundantes, creando una escena de belleza infinita. La
+                                    fuente, con sus suaves chorros de agua, añade movimiento y vida al lago, mientras
+                                    las gotas danzan en el aire y caen con delicadeza sobre la superficie del agua. El
+                                    sonido relajante de la fuente complementa la paz y la quietud del entorno,
+                                    invitándote a sumergirte en la armonía de la naturaleza. Observa cómo los rayos del
+                                    sol acarician el agua, creando destellos brillantes que iluminan el paisaje con un
+                                    resplandor mágico. Es un lugar donde el tiempo parece detenerse y donde puedes
+                                    encontrar refugio en la serenidad del lago y la belleza de su fuente..</p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center justify-content-md-end py-4">
+                            <!-- Alineación de la imagen -->
+
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/ZAkFnn7jlj8?si=dZBvqfqnuycmT2Ru"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-3 text-center container  ">
+    <div class="row ">
+        <div class="col-form-label-lg">
+            <h1 class=" letra modal-title fw-semibold py-3">IMAGENES</h1>
+            <p class="lead text-body-emphasis text-start">
+
+                "Estas imágenes tienen como objetivo crear una experiencia inmersiva que estimule los sentidos y evoca
+                recuerdos a través de la contemplación de paisajes naturales. Desde la imponente caída de una cascada
+                hasta la tranquilidad de un lago sereno, cada imagen busca revitalizar el sistema nervioso y promover la
+                relajación y el bienestar. La exuberancia de la selva y la serenidad de un jardín son presentadas como
+                herramientas terapéuticas, invitando a las personas a reconectar con la naturaleza y encontrar momentos
+                de tranquilidad en su día a día. Además, se pretende fomentar la interacción y la conexión emocional al
+                invitar a los espectadores a compartir sus recuerdos y experiencias mientras contemplan estas imágenes."
+                <li>¿Hay alguna imagen en particular que te haya impactado más que otras? ¿Por qué crees que te impactó de esa manera?</li>
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- seccion 1 de  imagenes  -->
+<section class=" margen container-fluid">
+    <div class="row">
+        <div class="col-md-6 text-bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center ">
+            <div class="  display-6">
+                <h2 class="display-5 fw-bold">LAGO</h2>
+                <p class="lead text-start">¿Qué emociones te genera esta imagen del lago? ¿Te hace sentir tranquilo, emocionado o nostálgico?
+                    ¿Recuerdas alguna vez haber visitado un lago parecido? ¿Qué sensaciones experimentaste entonces?
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/laguna.jpg') }}"
+                    class="bg-body-tertiary shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;"><br><br>
+            </div>
+
+        </div>
+        <div class="col-md-6 verde pt-3 px-3 pt-md-5 px-md-5 text-center ">
+            <div class="display-6">
+                <h2 class="display-5 text-white fw-bold">CASCADA</h2>
+                <p class="lead text-start">¿Qué recuerdos te evoca esta imagen de la cascada? 
+                    ¿Qué aspecto de esta imagen de la cascada te parece más cautivador? ¿Quizás la fuerza del agua, la belleza del entorno natural o la sensación de movimiento?
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/cascada2.jpg') }}" class="bg-dark shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;"><br><br>
+            </div>
+
+        </div>
+    </div>
+
+
+</section>
+<!-- seccion 2 de imagenes  -->
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 verde pt-3 px-3 pt-md-5 px-md-5 text-center ">
+            <div class="display-6">
+                <h2 class="display-5 text-white fw-bold">CRECIENTE DE AGUA</h2>
+                <p class="lead text-start">Al observar esta imagen, ¿hay algún olor particular que te viene a la mente? ¿Quizás el aroma fresco de la vegetación o el rocío del agua?
+                    ¿Te imaginas algún lugar o momento en el que te gustaría observar esta creciente de agua? ¿Qué te lleva a ese lugar en tu imaginación?
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/fuente.jpg') }}"
+                    class="bg-body-tertiary shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;"><br><br>
+            </div>
+
+        </div>
+        <div class="col-md-6 bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center ">
+            <div class="display-6">
+                <h2 class="display-5 text-white fw-bold">POSO DE DESEOS</h2>
+                <p class="lead text-white text-start">Al observar esta imagen del pozo, ¿te trae algún recuerdo específico de tu infancia o de tu vida pasada?
+                    ¿Te gustaría compartir alguna historia o anécdota relacionada con pozos que hayas conocido en tu vida? ¿Qué emociones te genera la imagen del pozo?
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/poseta.jpg') }}" class="bg-dark shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;"><br><br>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- seccion 3 de imagenes -->
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 text-bg-dark pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="display-6">
+                <h2 class="display-5 fw-bold">SELVA</h2>
+                <p class="lead text-start">¿Te lleva esta imagen a algún momento específico de tu vida, como algún viaje que hayas hecho a un lugar similar?
+                    ¿Qué aspecto de esta imagen te llama más la atención y por qué?
+                    ¿Qué te lleva a sentir curiosidad o fascinación por las selvas en general?
+                    
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/vegetacion.jpg') }}"
+                    class="bg-body-tertiary shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;"> <br><br>
+            </div>
+
+        </div>
+        <div class="col-md-6 verde pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="display-6">
+                <h2 class="display-5 text-white fw-bold">JARDIN</h2>
+                <p class="lead text-start">¿Cómo crees que esta imagen puede influir en tu estado de ánimo o bienestar emocional?<br>
+                    ¿Tienes alguna anécdota o recuerdo relacionado con la observación de la naturaleza o la jardinería que te gustaría compartir?
+                </p>
+            </div>
+            <div class="aumento">
+                <img src="{{ url_for('static', filename='imagenes/jardin.jpg') }}" class="bg-dark shadow-sm mx-auto"
+                    style="width: 85%; height: 300px; border-radius: 21px 21px 0 0;">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

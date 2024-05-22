@@ -1,0 +1,383 @@
+{% extends "./layout.html" %}
+
+{% block titulo %}
+Historia
+{% endblock %}
+
+{% block estilos %}
+
+<style>
+  /* tono para los contenedores #f5f6f7 claro */
+  /* estilo para imagen principal */
+  .card-img-top {
+    max-height: 580px;
+
+    /* Fin */
+  }
+
+  .tamaño-img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  /* estilos para  las actividades */
+
+  /* Estilos adicionales */
+
+  .album1 {
+    background-color: forestgreen;
+  }
+
+  .titulos {
+    color: forestgreen;
+  }
+
+  .fondo {
+    background-image: url("{{ url_for('static', filename='imagenes/horticultura.png') }}");
+    background-size: cover;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Asegura que la altura se distribuya correctamente */
+  }
+
+  .accordion-button.tit {
+    justify-content: center;
+    background-color: forestgreen;
+    color: white;
+  }
+
+
+  .accordion-border-color {
+    border: black;
+  }
+
+  .modal {
+    background-image: url("{{ url_for('static', filename='imagenes/ancianato.jpg') }}");
+    background-size: cover;
+  }
+</style>
+
+{% endblock %}
+
+{% block contenido %}
+
+<!-- Crear historia del hogar -->
+<section id="historial">
+  <div class="card mb-3">
+    <img src="{{ url_for('static', filename='imagenes/historia.png') }}" class="card-img-top  " alt="...">
+    <div class="card-body">
+      <h5 class=" titulos card-title fw-bold">HISTORIA HOGAR ANCIANO DESAMPARADO</h5>
+      <p class="card-text lead text-body-emphasis">
+        En medio de las calles de Girardot, Cundinamarca, habitaban ancianos desamparados, hombres y mujeres sin techo
+        ni
+        familia. Su presencia era una constante, durmiendo en los corredores de las casas o en los alrededores de la
+        iglesia. Los Padres Claretianos, con una mirada de fe, reconocieron en ellos la imagen de Dios y decidieron
+        actuar. Encabezados por el Padre Gerardo Arias, organizaron mercados para familias pobres y un comedor para
+        alimentar a los ancianos. Con la ayuda de voluntarios como Lili Rincón, Carmen Elena Torres y Luz Marina
+        Martínez,
+        integrantes de grupos de oración locales, se inició un esfuerzo conjunto para brindar apoyo a los más
+        necesitados.
+      </p>
+      <p class="card-text"><small class="text-dark">Inicios</small></p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FIN -->
+<!--  Seccion para contar la historia  -->
+<section class="fondo container-fluid">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class=" card">
+        <img src="{{ url_for('static', filename='imagenes/holanda.jpg') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class=" titulos card-title fw-bold">HOLANDA</h5>
+          <p class="card-text lead text-body-emphasis">Luz Marina Martínez contrajo matrimonio con el holandés Rodolfo
+            Goeloey. Desde allí,
+            escribió a un grupo de oración de Girardot para comunicarles que la Renovación Carismática de Eindhoven, en
+            Holanda, estaba interesada en ayudar económicamente para abordar uno de los problemas graves de los pobres
+            de la ciudad, con la condición de que alguien se responsabilizara de llevarlo adelante.
+            <br>
+            <br>
+
+            La noticia llegó a oídos del P. Alfonso Prieto, párroco de San Miguel, quien comunicó al señor Obispo
+            Monseñor Jesús María Coronado. Llegando a un acuerdo: lo más urgente era un hogar para acoger a los ancianos
+            desamparados.
+
+            De inmediato, el Señor Obispo nombró al P. Prieto como su representante en el diseño y ejecución del futuro
+            albergue para ancianos desvalidos.
+
+            El P. Prieto convocó una asamblea de los grupos de oración dispuestos a colaborar con la obra propuesta, la
+            cual se constituyó con una junta directiva que, con mucho entusiasmo, inició sus labores.
+          </p>
+          <p class=" card-text "><small class=" text-dark ">Parte uno</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col  ">
+      <div class=" card ">
+        <img src="{{ url_for('static', filename='imagenes/costruccion.jpg') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class="titulos card-title fw-bold">COSTRUCCIÓN</h5>
+          <p class="card-text lead text-body-emphasis" style="height: 480px;">Con los planos del Dr. Hernando Quintero y
+            las fotografías del
+            reportero gráfico del
+            periódico El Tiempo, Célico López, se hizo la propuesta concreta. Con base en esta propuesta, se obtuvo el
+            dinero de los católicos de Holanda para comprar el lote, junto con la promesa de ayuda para la construcción
+            de la obra.
+            <br><br>
+            Junto a la generosa colaboración de los católicos de Eindhoven, en Holanda, es justo resaltar el aporte de
+            la ciudadanía de Girardot. Este alcanzó su punto más alto con la radio ton, coordinada en Radio Girardot por
+            el periodista Hernando Paramo, cuyos resultados superaron los $80.000.000.
+          </p>
+          <p class=" card-text "><small class=" text-dark ">Parte dos</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col  ">
+      <div class=" card ">
+        <img src="{{ url_for('static', filename='imagenes/director.png') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class="titulos card-title fw-bold">CAMBIO DE DIRECTOR</h5>
+          <p class="card-text lead text-body-emphasis" style="height: 420px;">
+            El 15 de febrero de 1983, el P. Ulises Gonzales asumió como nuevo
+            párroco de San Miguel.
+            Heredó el compromiso de continuar la construcción del Hogar del Anciano Desamparado, que en ese entonces se
+            encontraba a medio camino de su primera etapa, y también asumió la responsabilidad de ser su Director.
+            <br><br>
+            A finales de junio de 1993, los grupos de oración, la Junta Directiva y el párroco de San Miguel compartían
+            un profundo gozo. Habían logrado su objetivo: la construcción de un Hogar para los ancianos desamparados
+            estaba completada y listo para su apertura. Pero también era el momento de comenzar otra labor: convencer a
+            los gerentes callejeros para que aceptaran el hogar recién construido.
+          </p>
+          <p class=" card-text "><small class=" text-dark ">Parte tres</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card">
+        <img src="{{ url_for('static', filename='imagenes/ancianato2.png') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class="titulos card-title fw-bold">FUNDACION HOGAR DEL ANCIANO DESAMPARADO</h5>
+          <p class="card-text lead text-body-emphasis">La inauguración y fundación oficial del Hogar del Anciano
+            Desamparado se llevó a cabo el 14 de agosto de 1983, con la presencia de 25 ancianos: 9 mujeres y 16
+            hombres. Se realizó una Eucaristía presidida por el Señor Obispo Monseñor Rodrigo Escobar, concelebrada por
+            los padres Ulises Gonzales y Alfonso Prieto, y contó con la participación de la Junta Directiva, los grupos
+            de oración, los benefactores, simpatizantes de la obra y el público en general.
+            <br><br>
+            Hasta marzo de 1985, a los 18 meses de su fundación, el Hogar del Anciano Desamparado había recibido a 65
+            ancianos, de los cuales 45 permanecían en el hogar. Algunos encontraron a sus familiares, otros necesitaban
+            procesos especiales de recuperación y fueron llevados a centros de rehabilitación, mientras que 8
+            fallecieron y ya descansaban en paz
+          </p>
+          <p class=" card-text ">
+            <small class=" text-dark ">Parte cuatro</small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 py-4">
+    <div class="col">
+      <div class="card">
+        <img src="{{ url_for('static', filename='imagenes/ancianato.jpg') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class="titulos card-title fw-bold">SEGUNDA ETAPA</h5>
+          <p class="card-text lead text-body-emphasis">El 15 de abril de 1985 se dio inicio a la construcción de la
+            segunda etapa del Hogar del Anciano Desamparado. El padre Eulises Gonzales contrató al experto maestro de
+            obra, el Sr. Vicente Oviedo, para dirigir los trabajos, quien siguió meticulosamente los planos del Dr.
+            Hernán Quintero. La principal fuente de financiamiento continuó siendo Holanda. El 15 de diciembre de 1985,
+            durante una misa de acción de gracias, el padre Eulises Gonzales bendijo la construcción del segundo piso
+            del Hogar del Anciano Desamparado.</p>
+          <p class=" card-text "><small class=" text-dark ">Parte cinco</small></p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="{{ url_for('static', filename='imagenes/canonica.jpg') }}" class="tamaño-img" alt="...">
+        <div class="card-body">
+          <h5 class="titulos card-title fw-bold">FUNDACIÓN CANÓNICA</h5>
+          <p class="card-text lead text-body-emphasis" style="height: 240px;">El Hogar del Anciano Desamparado, durante
+            sus primeros 10 años, estuvo amparado por la personería jurídica de la Diócesis de Girardot. Fue constituido
+            como fundación canónica de derecho privado mediante el Decreto Episcopal No. 094 de 1993 y adscrito a la
+            Parroquia del Inmaculado Corazón de María durante los últimos 7 años.</p>
+          <p class=" card-text "><small class=" text-dark ">Parte seis</small></p>
+        </div>
+      </div>
+    </div>
+</section>
+<!--  Fin seccion de la historia  -->
+
+<!-- seccion de mision y vision -->
+<section class=" text-center">
+
+  <div class="accordion text-center py-3" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header text-center">
+        <button class="tit accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onmouseenter="this.click()">
+          MISIÓN
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <p class="card-text lead text-body-emphasis">
+            El Hogar del Anciano Desamparado de la ciudad de Girardot, es una institución sin ánimo de lucro y que tiene
+            como misión prestar sus servicios a personas mayores teniendo como base los principios y valores, respetando
+            así mismo las actitudes mentales y espirituales para ayudar a levantar y equilibrar la salud de las personas
+            mayores.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item py-2">
+      <h2 class="accordion-header t text-center">
+        <button class="tit accordion-button collapsed fw-bold d-flex justify-content-end" type="button"
+          data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+          onmouseenter="this.click()">
+          <span>VISIÓN</span>
+        </button>
+      </h2>
+
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body" style="text-align: right;">
+          <p class="card-text lead text-body-emphasis">Ser un centro especializado en la protección y cuidado integral
+            de los adultos mayores de la ciudad de Girardot y sus alrededores, ofreciendo profesionales capacitados y de
+            alta calidad humana, así mismo teniendo un alto grado de organización, de acuerdo a los programas que
+            ofrecemos y que benefician y garantizan una atención holística para la permanencia de nuestras personas
+            mayores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-2 text-center container  ">
+  <div class="row ">
+    <div class="col-form-label-lg">
+      <h1 class="modal-title fw-semibold py-3 " style="color: forestgreen;">HISTORIAS CONTADAS POR LOS ABUELITOS</h1>
+    </div>
+  </div>
+</section>
+<section id="historiasContainer" class=" fondo container-fluid py-3">
+
+</section>
+
+
+
+<!-- seccion del cargue de historias -->
+<section class="container-fluid text-center py-2">
+  <button type="button" class="btn btn-lg btn-dark btn-outline-success text-white" data-bs-toggle="modal"
+    data-bs-target="#cargaModal">
+    Cargar Historias
+  </button>
+</section>
+
+<!-- Modal -->
+<section>
+  <div class="modal fade container-fluid" id="cargaModal" tabindex="-1" aria-labelledby="cargaModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"> <!-- Added modal-dialog-scrollable -->
+      <div class="modal-content">
+        <div class="modal-header bg-body-secondary text-center">
+          <h5 class="modal-title fw-bold text-success" id="cargaModalLabel">ESCRIBIR HISTORIA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Formulario para cargar archivos o mensajes -->
+          <form id="uploadForm" enctype="multipart/form-data" >
+            <div class="mb-3">
+              <label for="nombre" class="form-label fw-semibold">Nombre de la persona que la contó</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="historia" class="form-label fw-semibold">Historia</label>
+              <div id="historia" class="form-control" contenteditable="true" required></div>
+            </div>
+            <button type="submit" class="btn btn-success">Cargar</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block js %}
+<script>
+  document.getElementById('uploadForm').addEventListener('submit', function (event) {
+    var nombre = document.getElementById('nombre').value.trim();
+    var historia = document.getElementById('historia').innerText.trim();
+
+    if (!nombre || !historia) {
+      alert('Por favor, complete ambos campos antes de enviar.');
+      event.preventDefault(); // Evita que el formulario se envíe
+    }
+  });
+  // Función para manejar el envío del formulario
+  document.getElementById('uploadForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evitar que el formulario se envíe normalmente
+
+    // Capturar los datos del formulario
+    var nombre = document.getElementById('nombre').value;
+    var historia = document.getElementById('historia').innerText;
+
+    // Imprimir los valores capturados en la consola para depuración
+    console.log("Nombre:", nombre);
+    console.log("Historia:", historia);
+
+    // Obtener las historias almacenadas en el almacenamiento local
+    var historiasGuardadas = localStorage.getItem('historias') ? JSON.parse(localStorage.getItem('historias')) : [];
+
+    // Agregar la nueva historia
+    historiasGuardadas.push({ nombre: nombre, historia: historia });
+
+    // Guardar las historias actualizadas en el almacenamiento local
+    localStorage.setItem('historias', JSON.stringify(historiasGuardadas));
+
+    // Limpiar el formulario
+    document.getElementById('nombre').value = '';
+    document.getElementById('historia').innerText = '';
+
+    // Mostrar mensaje de éxito
+    alert("La historia se ha subido correctamente.");
+
+    // Redirigir a la página principal
+    window.location.href = 'historia'
+  });
+
+  // Función para mostrar las historias almacenadas en el almacenamiento local
+  function mostrarHistorias() {
+    var historiasGuardadas = localStorage.getItem('historias') ? JSON.parse(localStorage.getItem('historias')) : [];
+
+    var historiasHTML = '';
+    historiasGuardadas.forEach(function (item) {
+      historiasHTML += '<div class="card mb-3">';
+      historiasHTML += '<div class="card-body">';
+      historiasHTML += '<h5 class="card-title">' + item.nombre + '</h5>';
+      historiasHTML += '<p class="card-text">' + item.historia + '</p>'; // aquí se muestra la historia
+      historiasHTML += '</div>';
+      historiasHTML += '</div>';
+    });
+
+    // Mostrar las historias en el contenedor
+    document.getElementById('historiasContainer').innerHTML = historiasHTML;
+  }
+
+  // Mostrar las historias cuando la página se carga
+  window.addEventListener('load', mostrarHistorias);
+</script>
+{% endblock %}
